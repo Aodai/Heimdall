@@ -2,9 +2,9 @@
 
 Heimdall is a project in early stage that aims to provide a modern API for Rappelz server management. At the moment Heimdall provides general information about a Rappelz server.
 
-TO-DO:
-[ ] Add endpoints for executing functions on Rappelz's game server.
-[ ] Implement users and roles.
+# TODO
+- [ ] Add endpoints for executing functions on Rappelz's game server.  
+- [ ] Implement users and roles.  
 
 # Note
 
