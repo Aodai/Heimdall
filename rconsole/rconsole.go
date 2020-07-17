@@ -6,6 +6,7 @@ import (
 	"net"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/aodai/heimdall/config"
 	"github.com/aodai/heimdall/model"
@@ -24,12 +25,9 @@ func (rc *RConsole) Init() {
 	ip := cfg.GetString("Server.IP")
 	port := cfg.GetInt("Server.Port")
 	pass := cfg.GetString("Server.Password")
-	ipEP := fmt.Sprintf("%s:%d", ip, port)
-	tcpAddr, err := net.ResolveTCPAddr("tcp", ipEP)
-	if err != nil {
-		panic(err)
-	}
-	rc.conn, err = net.DialTCP("tcp", nil, tcpAddr)
+	addr := fmt.Sprintf("%s:%d", ip, port)
+	var err error
+	rc.conn, err = net.DialTimeout("tcp", addr, 15*time.Second)
 	if err != nil {
 		panic(err)
 	}
