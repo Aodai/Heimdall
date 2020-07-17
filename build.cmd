@@ -1,11 +1,4 @@
 @echo off
-SET GOARCH=amd64
-for %%o in (windows linux) do (
-    SET GOOS=%%o
-    if %%o == windows (
-            go build -ldflags "-s -w" -o build/RappelzAPI.exe .\cmd\heimdall\
-        ) else (  
-           go build -ldflags "-s -w" -o build/RappelzAPI .\cmd\heimdall\
-        )
-        echo RappelzAPI-%%o built!
-)
+go build -ldflags "-s -w" .\cmd\heimdall\
+REM No error check since go compiler returns 0 when it fails to compile.
+echo Done building!
