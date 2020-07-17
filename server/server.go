@@ -6,7 +6,8 @@ import (
 	"github.com/aodai/heimdall/config"
 )
 
-func Init() {
+// Run starts the web server.
+func Run() {
 	cfg := config.GetConfig()
 	r := NewRouter()
 	r.Run(fmt.Sprintf("%s:%d", cfg.GetString("Web.Address"), cfg.GetInt("Web.Port")))
