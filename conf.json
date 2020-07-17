@@ -1,0 +1,11 @@
+{
+    "Web": {
+        "Address": "0.0.0.0",
+        "Port": 8000
+    },
+    "Server": {
+        "IP": "10.0.0.22",
+        "Port": 44453,
+        "Password": "genius"
+    }
+}
